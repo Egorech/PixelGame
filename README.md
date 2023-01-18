@@ -12,4 +12,5 @@
 <h4>для сохранения миграций вы должны находиться в папке PixelGame\coolsite</h4>
 <p>python manage.py makemigrations</p> 
 <p>python manage.py migrate</p> 
-
+<h3>Запуск сайта</h3>
+<p>Для запуска сайта введите в терминал python manage.py runserver, для корректной работы вы должны находиться в папке PixelGame\coolsite</p> 
