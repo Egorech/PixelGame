@@ -1,0 +1,241 @@
+*{
+	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+	margin: 0px 150px;
+	font-family: Arial, Helvetica, sans-serif;
+	background: url("../img/s-l400.jpg");
+}
+
+i {
+    font-size: 35px;
+}
+
+/*
+общие настройки nav
+*/
+.navbar{
+	position: sticky;
+	top: 0;
+	background-color: black;
+	width: 100%;
+	height: 70px;
+}
+
+.navbar .container{
+	height: inherit;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.navbar-menu{
+	list-style-type: none;
+}
+
+.navbar-menu li{
+	display: inline-block;
+
+}
+
+.navbar-menu li a{
+	font-size: 17px;
+	display: inline-block;
+	color: white;
+	opacity: 0.6;
+	text-decoration: none;
+	padding: 20px;
+	transition: all .07s ease-in-out;
+}
+
+.navbar-menu li a:hover{
+	opacity: 1;
+}
+
+.navbar-wrap{
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+.navbar-brand{
+	padding: 10px;
+	font-weight: 900;
+	font-size: 35px;
+	text-decoration: none;
+	color: white;
+	transition: all .07s ease-in-out;
+}
+
+.navbar-brand:hover{
+	color: coral;
+}
+
+.callback{
+	color: #f2f2f2;
+	padding: 10px 20px;
+	transition: all .1s ease-out;
+}
+
+.callback:hover{
+	color: coral;
+	transform: scale(1.2);
+}
+
+
+.content{
+	background-color: #e0ebeb;
+	padding: 0px 0px 10px 0px;
+}
+
+.content p{
+	font-size: 18px;
+	padding: 5px 30px;
+	line-height: 22px;
+}
+
+.content h1{
+    font-size: 40px;
+    text-align: center;
+    padding: 10px;
+}
+
+.content img{
+	display: block;
+	margin: auto;
+	max-width: 1200px;
+	max-height: 500px;
+}
+
+.wrapper h2{
+	font-size: 25px;
+	margin: 20px 0px;
+	padding: 20px 0px;
+	background-color: #ffb380;
+	text-align: center;
+}
+
+.wrapper h3{
+	font-size: 25px;
+	margin: 20px 0px;
+	padding: 20px 0px;
+	background-color: #cccccc;
+	text-align: center;
+}
+
+.wrapper p{
+	padding: 20px 30px;
+	line-height: 22px;
+	margin: 0px 40px;
+}
+
+.wrapper img{
+	height: 430px;
+	width: 800px;
+}
+
+.link{
+	text-align:center;
+	margin: 10px 0px 30px 0px;
+}
+.wrapper a {
+	border: 5px solid #7450A4;
+	font-size: 30px;
+	color: white;
+	text-decoration: none;
+	text-align: center;
+	background-color: black;
+	padding: 10px 10px;
+	border-radius: 10px;
+  	transition: .1s;
+}
+
+.wrapper a:hover {
+	box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.grid {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: 10px;
+	margin-right: 10px;
+	padding: 0;
+	list-style: none;
+}
+
+.item {
+	width: 33.33%;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin: 10px 0px;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	background-color: white;
+}
+
+.card-prew {
+	height: 200px;
+}
+
+.card-img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: .4s;
+}
+
+.card-img:hover{
+     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.card-body {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+	padding: 10px;
+}
+
+.card-title{
+    font-size: 30px;
+	margin: 0;
+}
+
+.card-desc{
+	margin-bottom: 0;
+}
+
+.card-bottom{
+	margin-top: 15px;
+}
+
+.card-date{
+	color: grey;
+}
+
+.form-input {
+    font-size: 20px;
+}
+
+.form-label {
+    display: inline-block;
+    min-width: 150px;
+    vertical-align: top;
+}
+
+.form-error ul {
+    list-style: none;
+    color: #CC0000;
+}
+
+.form-button {
+    min-width: 300px;
+    font-size: 18px;
+}

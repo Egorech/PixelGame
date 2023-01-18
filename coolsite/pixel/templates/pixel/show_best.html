@@ -1,0 +1,23 @@
+{% extends 'pixel/base.html' %}
+{% block content %}
+<div class="content">
+    <img src="{{bests.photo.url}}" width="1000" height="500">
+	<h1>Лучшие игры {{name_id}} года</h1>
+	<p>{{bests.content}}</p>
+	<div class="wrapper">
+		{% for j in janrs %}
+			<h2>{{j.name}}</h2>
+					{% for g in games %}
+						{% if g.janr_id == j.pk and g.best_id == bests.pk %}
+							<h3>{{g.title}}</h3>
+							<img src="{{g.photo.url}}">
+							<p>{{g.content}}</p>
+							<div class="link">
+								<a href={{g.buy}} target="_blank">Купить</a>
+							</div>
+						{% endif %}
+					{% endfor %}
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}

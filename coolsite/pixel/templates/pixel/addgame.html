@@ -1,0 +1,18 @@
+{% extends 'pixel/base.html' %}
+
+{% block content %}
+<div class="content" style="height: 80vh;">
+    <h1>Добавление игры</h1>
+    <form action="{% url 'addgame' %}" method="post" enctype="multipart/form-data" style="margin: 5px;">
+        {% csrf_token %}
+
+        <div class="form-error">{{ form.non_field_errors }}</div>
+
+    {% for f in form %}
+    <p style="font-size: 17px;"><label class="form-label" for="{{ f.id_for_label }}">{{f.label}}: </label>{{ f }}</p>
+    <div class="form-error">{{ f.errors }}</div>
+    {% endfor %}
+        <button type="submit" style="font-size: 15px; margin-left: 28px;">Добавить</button>
+    </form>
+</div>
+{% endblock %}

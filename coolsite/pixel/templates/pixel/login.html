@@ -1,0 +1,21 @@
+{% extends 'pixel/base.html' %}
+{% block content %}
+<div class="content" style="height: 80vh;">
+    <h1>{{title}}</h1>
+    <p style="color: red; text-align: center;">
+        Для возможности добавлять игры нужно ВОЙТИ или ЗАРЕГИСТРИРОВАТЬСЯ
+    </p>
+    <form method="post" style="margin: 10px;">
+        {% csrf_token %}
+
+    <div class="form-error">{{ form.non_field_errors }}</div>
+
+    {% for f in form %}
+    <p style="margin: 16px;"><label class="form-label" for="{{ f.id_for_label }}">{{f.label}}: </label>{{ f }}</p>
+    <div class="form-error">{{ f.errors }}</div>
+    {% endfor %}
+
+        <button type="submit" style="font-size: 15px; margin-left: 45px;">Войти</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'pixel/base.html' %}
+{% block content %}
+<div class="content">
+    <img src="{{janrs.photo.url}}" width="1000" height="500">
+	<h1>ЛУЧШИЕ {{name_id}}</h1>
+	<p>{{janrs.content}}</p>
+	<div class="wrapper">
+		{% for g in games %}
+			{% if g.janr_id == janrs.pk %}
+			<h3>{{g.title}}</h3>
+			<img src="{{g.photo.url}}">
+			<p>{{g.content}}</p>
+			<div class="link">
+				<a href={{g.buy}} target="_blank">Купить</a>
+			</div>
+			{% endif %}
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}

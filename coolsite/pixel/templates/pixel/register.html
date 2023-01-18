@@ -1,0 +1,15 @@
+{% extends 'pixel/base.html' %}
+{% block content %}
+<div class="content" style="height: 80vh;">
+    <h1>{{title}}</h1>
+    <form method="post" style="margin: 10px;">
+        {% csrf_token %}
+
+    {% for f in form %}
+    <p style="margin: 18px;"><label class="form-label" for="{{ f.id_for_label }}">{{f.label}}: </label>{{ f }}</p>
+    <div class="form-error" style="margin: 5px 0px;">{{ f.errors }}</div>
+    {% endfor %}
+        <button type="submit" style="font-size: 15px; margin-left: 50px;">Регистрация</button>
+    </form>
+</div>
+{% endblock %}

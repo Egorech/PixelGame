@@ -1,0 +1,33 @@
+{% extends 'pixel/base.html' %}
+
+{% block content %}
+<div class="content">
+	<h1>Жанры игр</h1>
+			<ul class="grid">
+				{% for j in janrs %}
+				<li class="item">
+					<div class="card">
+						<div class="card-prew">
+								<a href="{{ j.get_absolute_url }}">
+								<img class="card-img" src="{{j.photo.url}}">
+							</a>
+						</div>
+						<div class="card-body">
+							<div class="card-top">
+								<h2 class="card-title">{{j.name}}</h2>
+								<p class="card-desc">
+								{{j.content | truncatewords:10}}
+								</p>
+							</div>
+							<div class="card-bottom">
+								<span class="card-date">
+									Дата публикации: {{j.time_create | date:"d-m-Y"}}
+								</span>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+				</li>
+			</ul>
+</div>
+{% endblock %}

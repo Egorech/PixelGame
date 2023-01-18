@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="icon" href="{% static 'pixel/img/favicon.ico' %}" type="image/x-icon">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{% static 'pixel/css/style.css' %}">
+	<script src="https://kit.fontawesome.com/51fdc17780.js" crossorigin="anonymous"></script>
+	<title>{{title}}</title>
+</head>
+<body>
+{% block mainmenu %}
+	<nav class="navbar">
+		<div class="container">
+			<a href="{% url 'home' %}" class="navbar-brand">Pixelover</a>
+			<div class="navbar-wrap">
+				<ul class="navbar-menu">
+					{% if request.user.is_authenticated %}
+						<li><a href="{% url 'addgame' %}">Добавление игры</a></li>
+					{% else %}
+						<li><a href="{% url 'login' %}">Добавление игры</a></li>
+					{% endif %}
+					{% for m in menu %}
+						<li><a href="{% url m.url_name %}">{{m.title}}</a></li>
+					{% endfor %}
+					{% if request.user.is_authenticated %}
+						<li><span style="color:white; font-size: 18px;">{{user.username}}</span>
+								<span style="color:orange; font-size: 20px;">|</span>
+								<a href="{% url 'logout' %}" style="padding-left: 1px;">Выйти</a></li>
+					{% else %}
+						<li><a href="{% url 'register' %}" style="padding-right: 1px;">Регистрация</a>
+								<span style="color:orange; font-size: 20px;">|</span>
+								<a href="{% url 'login' %}" style="padding-left: 1px;">Войти</a></li>
+					{% endif %}
+				</ul>
+				<a href="https://t.me/Egor_Tupikin" class="callback" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+				<a href="https://vk.com/id323062926" class="callback" target="_blank"><i class="fa-brands fa-vk"></i></i></a>
+			</div>
+		</div>
+	</nav>
+{% endblock mainmenu %}
+		{% block content %}
+		{% endblock %}
+</body>
+</html>
