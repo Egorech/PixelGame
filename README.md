@@ -9,7 +9,7 @@
 <h3>Скачивание необходимых пакетов</h3>
 <p>pip install -r requirements.txt</p>
 <p>pip install sqlite</p>  
-<h4>для сохранения миграций вы должны находиться в папке PixelGame\coolsite</h4>
+<h4>для создания всех миграций вы должны находиться в папке PixelGame\coolsite</h4>
 <p>python manage.py makemigrations</p> 
 <p>python manage.py migrate</p> 
 <h3>Запуск сайта</h3>
