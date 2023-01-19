@@ -14,3 +14,4 @@
 <p>python manage.py migrate</p> 
 <h3>Запуск сайта</h3>
 <p>Для запуска сайта введите в терминал python manage.py runserver, для корректной работы вы должны находиться в папке PixelGame\coolsite</p> 
+![image](https://user-images.githubusercontent.com/90097022/213542101-9ee63655-bd0e-4b4b-8571-86dc178bc67f.png)
