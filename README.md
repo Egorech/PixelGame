@@ -1,6 +1,6 @@
 <h1>PixelGame</h1>
 <p>Проект называется PxeilGame и представляет собой блог о играх на фреймворке Django, в котором есть возможно регистрироваться, авторизовываться, и добавлять новую игру, если пользователь был авторизован</p>
-![](PixelGame/1Wt7Mhqv3E0_photo-resizer.ru.jpg)
+![]([PixelGame/1Wt7Mhqv3E0_photo-resizer.ru.jpg](https://github.com/Egorech/PixelGame/blob/master/1Wt7Mhqv3E0_photo-resizer.ru.jpg))
 <h3>Необходимые зависимости</h3>
 <p>asgiref==3.5.2</p>
 <p>Pillow==9.3.0</p>
