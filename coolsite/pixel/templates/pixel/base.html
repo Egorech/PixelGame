@@ -16,7 +16,7 @@
 			<a href="{% url 'home' %}" class="navbar-brand">Pixelover</a>
 			<div class="navbar-wrap">
 				<ul class="navbar-menu">
-					{% if request.user.is_authenticated %}
+					{% if user.is_authenticated %}
 						<li><a href="{% url 'addgame' %}">Добавление игры</a></li>
 					{% else %}
 						<li><a href="{% url 'login' %}">Добавление игры</a></li>
@@ -24,7 +24,7 @@
 					{% for m in menu %}
 						<li><a href="{% url m.url_name %}">{{m.title}}</a></li>
 					{% endfor %}
-					{% if request.user.is_authenticated %}
+					{% if user.is_authenticated %}
 						<li><span style="color:white; font-size: 18px;">{{user.username}}</span>
 								<span style="color:orange; font-size: 20px;">|</span>
 								<a href="{% url 'logout' %}" style="padding-left: 1px;">Выйти</a></li>
