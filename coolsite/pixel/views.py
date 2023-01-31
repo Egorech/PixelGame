@@ -16,9 +16,8 @@ def about_us(request):
 def show_best(request,name_id):
     games = Game.objects.all()
     janr_filter = set()
-    name_id = str(name_id)
-    bests = get_object_or_404(Best, name=name_id)
-    filter = Game.objects.filter(best_id=bests.pk)
+    bests = get_object_or_404(Best, name=str(name_id))
+    filter = Game.objects.filter(best_id=bests.id)
     for i in filter:
         janr_filter.add(i.janr_id)
     janrs = Janr.objects.filter(pk__in=janr_filter)
@@ -26,7 +25,7 @@ def show_best(request,name_id):
     return render(request, 'pixel/show_best.html', {'title': 'Лучшее за ' + name_id, 'menu': menu, 'games': games,
                                                     'janrs': janrs,'bests': bests, 'name_id': name_id})
 
-def show_janr(request, name_id): # нет класса представления, так как url_kwarg работает только для pk и slug
+def show_janr(request, name_id):
     janrs = get_object_or_404(Janr, name=name_id)
     games = Game.objects.filter(janr_id=janrs.pk)
     return render(request, 'pixel/show_janr.html', {'title': 'Лучшие ' + janrs.name, 'menu': menu, 'games': games,
