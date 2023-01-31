@@ -22,8 +22,8 @@ def show_best(request,name_id):
         janr_filter.add(i.janr_id)
     janrs = Janr.objects.filter(pk__in=janr_filter)
 
-    return render(request, 'pixel/show_best.html', {'title': 'Лучшее за ' + name_id, 'menu': menu, 'games': games,
-                                                    'janrs': janrs,'bests': bests, 'name_id': name_id})
+    return render(request, 'pixel/show_best.html', {'title': 'Лучшее за ' + str(name_id), 'menu': menu, 'games': games,
+                                                    'janrs': janrs,'bests': bests, 'name_id': str(name_id)})
 
 def show_janr(request, name_id):
     janrs = get_object_or_404(Janr, name=name_id)
